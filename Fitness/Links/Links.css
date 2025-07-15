@@ -1,0 +1,142 @@
+:root {
+    --primary-color: #f92524;
+    --primary-color-dark: #e91a1a;
+    --secondary-color: #faf9fe;
+    --text-dark: #0f172a;
+    --text-light: #64748b;
+    --white: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--secondary-color); /* Light background */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.logo {
+    margin-bottom: 40px;
+    text-align: left; /* Align logo to the left */
+    position: absolute; /* Position logo at the top left */
+    top: 20px;
+    left: 20px;
+}
+
+.logo img {
+    width: 60px; /* Adjust logo size to be smaller */
+    margin-right: 10px;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    color: var(--text-dark); /* Dark text for logo */
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('body.jpg'); /* Replace with your gym image URL */
+    background-size: cover; /* Make the background cover the entire container */
+    background-position: center; /* Center the image */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Limit maximum width */
+}
+
+.container a {
+    margin: 10px 0; /* Spacing between buttons */
+}
+
+button {
+    padding: 15px 30px; /* Button padding */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    font-size: 18px; /* Font size for buttons */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    position: relative; /* For pseudo-element positioning */
+    overflow: hidden; /* To contain the pseudo-element */
+}
+
+button.clicked {
+    transform: scale(0.95); /* Slightly shrink on click */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* Button styles */
+.bt1 {
+    background-color: var(--primary-color); /* Primary color */
+    color: var(--white);
+}
+
+.bt1:hover {
+    background-color: var(--primary-color-dark); /* Darker on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.bt2 {
+    background-color: var(--text-light); /* Light color for button */
+    color: var(--text-dark);
+}
+
+.bt2:hover {
+    background-color: var(--primary-color); /* Change to primary on hover */
+    color: var(--white);
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.bt3 {
+    background-color: var(--primary-color-dark); /* Dark primary color */
+    color: var(--white);
+}
+
+.bt3:hover {
+    background-color: var(--primary-color); /* Change to primary on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+/* Hover Glow Effect */
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0); /* Scale down initially */
+    transition: transform 0.6s ease; /* Smooth transition */
+    z-index: 0; /* Behind the button text */
+}
+
+button:hover::after {
+    transform: translate(-50%, -50%) scale(1); /* Scale up on hover */
+}
+
+/* Button click animation */
+button.clicked {
+    transform: scale(0.95); /* Slightly shrink on click */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    button {
+        width: 100%; /* Full width on smaller screens */
+        font-size: 16px; /* Slightly smaller font */
+    }
+
+    .logo img {
+        width: 50px; /* Further adjust logo size for smaller screens */
+    }
+}

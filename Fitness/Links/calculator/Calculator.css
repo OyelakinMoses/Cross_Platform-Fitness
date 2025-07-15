@@ -1,0 +1,206 @@
+
+:root{
+    --red-color:#Ed3541;
+    --grey-color:#343434;
+    --light-grey-color:#f8f8f8;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "roboto", sans-serif;
+    color: var(--grey-color);
+}
+
+h1, h2, h3, h4, h5, h6, button{
+    font-family: "Teko", sans-serif;
+}
+
+button{
+    width: 170px;
+    max-width: 100%;
+    height: 40px;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    margin-top: 10px
+}
+
+button[type="button"] {
+    background-color: var(--light-grey-color);
+    color: var(--grey-color);
+    border: 1px solid var(--grey-color);
+}
+
+button[type="button"]:hover {
+    background-color: var(--grey-color);
+    color: white;
+}
+
+.container{
+    width: 800px;
+    max-width: 100%;
+    margin: auto;
+    background-size: cover;
+}
+
+header{
+    height: 234px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background: url(image/face.jpg)
+    no-repeat center;
+    background-size: cover;
+
+    h1{
+        font-size: 60px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    
+    
+}
+
+main{
+    h2{
+        padding: 40px 0 26px 0;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    section.tabs{
+        text-align: center;
+        margin-bottom: 40px;
+
+        button{
+            border-radius: 50px;
+            border: 1px solid var(--grey-color);
+            background-color: transparent;
+            margin: 14px;
+
+            &.active{
+                border: 1px solid var(--red-color);
+                background-color: var(--red-color);
+                color: white;
+            }
+        }
+    }
+
+    section.calculator{
+        .tab-content{
+            display: none;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            &.active{
+                display: flex;
+            }
+            p{
+                flex-basis: 100%;
+                max-width: 562px;
+                margin: auto;
+                font-size: 16px;
+                text-align: center;
+                margin-bottom: 48px;
+            }
+            form {
+                flex-basis: 35%;
+                display: flex;
+                flex-direction: column;
+                padding: 12px;
+
+                label{
+                    font-size: 14px;
+                }
+
+                input{
+                    height: 40px;
+                    padding: 0 6px;
+                    margin-top: 4px;
+                    margin-bottom: 10px;
+                }
+
+                button{
+                    width: 100%;
+                    background-color: var(--red-color);
+                    color: white;
+                    border: 1px solid var(--red-color);
+                }
+            }
+
+            .result{
+                background-color: var(--light-grey-color);
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 12px;
+                margin-left: 40px;
+                text-align: center;
+
+                p{
+                    margin-bottom: 4px;
+                }
+
+                h3{
+                    font-size: 28px;
+                }
+
+                .init {
+                    display: block;
+                }
+
+                .final {
+                    display: none;
+                }
+
+                &.success {
+                    .init {
+                        display: none;
+                    }
+    
+                    .final {
+                        display: block;
+                    }
+    
+                }
+            }
+        }
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 30px; /* Smaller font for smaller screens */
+    }
+
+    main h2 {
+        font-size: 24px;
+    }
+
+    button {
+        width: 100%; /* Full width buttons on small screens */
+    }
+
+    section.calculator {
+        .tab-content {
+            form {
+                flex-basis: 100%; /* Full width forms */
+            }
+        }
+    }
+
+    .container {
+        width: 95%; /* More width for smaller screens */
+    }
+}

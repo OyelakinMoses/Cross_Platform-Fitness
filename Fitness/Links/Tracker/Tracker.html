@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker</title>
+    <link rel="stylesheet" href="Tracker.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Workout Tracker</h1>
+        <form id="workout-form">
+            <input type="text" id="workout-type" placeholder="Running (Workout)" required>
+            <input type="number" id="workout-duration" placeholder="Duration (minutes)" required>
+            <button type="submit">Add Workout</button>
+        </form>
+        <div id="filters">
+            <button class="filter-btn" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="Running">Running</button>
+            <button class="filter-btn" data-filter="Cycling">Cycling</button>
+            <button class="filter-btn" data-filter="Weights">Weights</button>
+        </div>
+        <ul id="workout-list"></ul>
+    </div>
+    <script src="Tracker.js"></script>
+</body>
+</html>

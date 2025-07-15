@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Calculator.css">
+    <title>Fitness Calculator</title>
+</head>
+<body>
+    <header>
+        <h1>Fitness Calculator</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Choose your Calculator</h2>
+
+            <section class="tabs">
+                <button id="bmi" class="active" onclick="handleTabs(event)">BMI</button>
+                <button id="water" onclick="handleTabs(event)">Water Intake</button>
+            </section>
+
+            <section class="calculator">
+                <div for="bmi" class="tab-content active">
+                    <p>BMI <b>Body Mass Index</b> is a numerical value calculated 
+                        from a person's weight and height, used to assess whether
+                        an individual has a healthy body weight for a given height.
+                    </p>
+                    <form>
+                        <label for="height"> Height (cm)</label>
+                        <input type="number" name="height">
+
+                        <label for="weight"> weight (kg)</label>
+                        <input type="number" name="weight">
+
+                        <button onclick="handleBMI()" type="button">Calculate</button>
+                        <button onclick="resetForm(event)" type="button">Cancel</button>
+                    </form>
+
+                    
+
+                    <div class="result">
+                        <div class="init">
+                            <small>Fill in the form and click Calculate to view the result.</small>
+                        </div>
+                        <div class="final">
+                            <p>Your BMI:</p>
+                            <h3 id="result_bmi"></h3>
+
+                            <p>Your Categorization:</p>
+                            <h3 id="result_bmi_class"></h3>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div for="water" class="tab-content ">
+                    <p>A water intake calculator estimates the optional
+                        daily water consumption based on a person's weight and
+                        activity level to ensure proper hydration.
+                    </p>
+                    <form>
+                        
+                        <label for="weight"> weight (kg)</label>
+                        <input type="number" name="weight">
+
+                        <label for="activity"> Activity Level (hours per day)</label>
+                        <input type="number" name="activity">
+
+                        <button onclick="handleWater()" type="button">Calculate</button>
+                        <button onclick="resetForm(event)" type="button">Cancel</button>
+                    </form>
+
+                    <div class="result">
+                        <div class="init">
+                            <small>Fill in the form and click Calculate to view the result.</small>
+                        </div>
+                        <div class="final">
+                            <p>Litres of water recommended per day:</p>
+                            <h3 id="result_water"></h3>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+   <script src="calculator.js"></script> 
+</body>
+</html>
+
+

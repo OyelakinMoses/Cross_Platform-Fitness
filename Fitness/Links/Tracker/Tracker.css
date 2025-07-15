@@ -1,0 +1,100 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container{
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h1{
+    margin: 0 0 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+button{
+    padding: 10px;
+    border: none;
+    background-color: #f92524;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+button:hover{
+    background-color: #d35b5b;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+li{
+    background: #fcfafa;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid pink;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.filter-btn{
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid rgb(209, 209, 207);
+    background-color: #f92524;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.filter-btn:hover{
+    background-color: rgb(27, 27, 27);
+}
+
+.filter-btn.active{
+    background-color: rgb(186, 111, 102);
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em; /* Smaller heading on smaller screens */
+    }
+
+    input[type="text"], input[type="number"], button {
+        font-size: 0.9em; /* Smaller inputs and buttons */
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+
+    .container {
+        padding: 15px; /* Adjust padding */
+    }
+}
+
